@@ -19,9 +19,12 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Falta intentar realizar el crud desde los servicios en el contructor public Process(Boolean simulateError)
+ * Factory employees work two shifts, day and night You want to calculate the daily wage according to the following points:
+ *  a) The rate for the daily hours is $ 15000
+ *  b) The rate for night hours is $ 20,000
+ *  c) If it is Sunday, the rate will increase by $ 500 pesos on day shift and $ 750 pesos the night shift
  *
- * @author Frank Yellin
+ * @author devnix
  * @jls 11.2 Compile-Time Checking of Exceptions
  * @see java.lang.Runtime
  * @since JDK1.8
@@ -43,6 +46,10 @@ public class Process implements Data {
 
     private boolean simulateError;
 
+    /**
+     * @return
+     * @throws Exception
+     */
     public String state() throws Exception {
         if (simulateError) {
             throw new Exception("Could not load data!");
@@ -51,6 +58,9 @@ public class Process implements Data {
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public void start() throws Exception {
         logger.info(state());
         /**
@@ -75,6 +85,9 @@ public class Process implements Data {
         System.exit(200);
     }
 
+    /**
+     *
+     */
     public static void continueProcess() {
         /**
          * logger.info("continueProcess, attempts: " + attempts);
