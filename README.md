@@ -11,7 +11,7 @@ day shift and $ 750 pesos the night shift
 
 ### How to start
 
-**Note** that this seed project requires **node >=v8.9.0 and npm >=4**.
+**Note** that this seed project requires **java >=v1.8 and Maven >=3.6.1**.
 
 In order to start the project use:
 
