@@ -3,6 +3,8 @@ package co.edu.miremington.programming.entity;
 import co.edu.miremington.programming.Enum.Documents;
 import org.apache.log4j.Logger;
 
+import java.util.InputMismatchException;
+
 /**
  * @author devnix
  * @apiNote Registration of an employee
@@ -84,6 +86,43 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setData(String key, Object value) {
+        try {
+            switch (key) {
+                case "id":
+                    setId(Integer.parseInt((String) value));
+                    break;
+                case "name":
+                    setName((String) value);
+                    break;
+                case "lastName":
+                    setLastName((String) value);
+                    break;
+                case "documentType":
+                    setDocumentType((Documents) value);
+                    break;
+                case "documentNumber":
+                    setDocumentNumber(Integer.parseInt((String) value));
+                    break;
+                case "age":
+                    setAge(Integer.parseInt((String) value));
+                    break;
+                case "gender":
+                    setGender((String) value);
+                    break;
+                case "email":
+                    setEmail((String) value);
+                    break;
+                default:
+                    break;
+            }
+        } catch (InputMismatchException imx) {
+            logger.error(imx);
+        } catch (Exception e) {
+            logger.error(e);
+        }
     }
 
     @Override
