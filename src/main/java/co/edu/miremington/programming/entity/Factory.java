@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 /**
+ * Registration of a job factory
  * @author devnix
- * @apiNote Registration of a job factory
  */
 public class Factory {
 

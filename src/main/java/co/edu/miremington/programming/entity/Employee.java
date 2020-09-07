@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 
 /**
+ * Registration of an employee
  * @author devnix
- * @apiNote Registration of an employee
  */
 public class Employee {
 

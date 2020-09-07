@@ -29,6 +29,19 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+          <docletArtifact>
+            <groupId>org.umlgraph</groupId>
+            <artifactId>doclet</artifactId>
+            <version>5.1</version>
+          </docletArtifact>
+          <additionalparam>-views</additionalparam>
+          <useStandardDocletOptions>true</useStandardDocletOptions>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <dependencies>

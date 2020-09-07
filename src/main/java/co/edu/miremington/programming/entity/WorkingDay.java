@@ -7,8 +7,8 @@ import org.apache.log4j.Logger;
 import java.util.InputMismatchException;
 
 /**
+ * Record of a work day for an employee
  * @author devnix
- * @apiNote Record of a work day for an employee
  */
 public class WorkingDay {
     private Integer id;

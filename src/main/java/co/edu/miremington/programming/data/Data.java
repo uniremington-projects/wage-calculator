@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * test data
  * @author devnix
- * @apiNote test data
  *
  */
 public interface Data {

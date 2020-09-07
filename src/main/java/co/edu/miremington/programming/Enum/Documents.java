@@ -1,8 +1,8 @@
 package co.edu.miremington.programming.Enum;
 
 /**
+ * List of the type of documents available
  * @author devnix
- * @apiNote List of the type of documents available
  */
 public enum Documents {
 

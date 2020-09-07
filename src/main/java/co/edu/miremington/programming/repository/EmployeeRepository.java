@@ -15,28 +15,17 @@ import java.util.Optional;
  */
 public class EmployeeRepository implements Data {
 
-    /**
-     *
-     * @return
-     */
+
     public List<Employee> getAll() {
         return EMPLOYEE_LIST;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
+
     public Optional<Employee> getEmployeeById(Integer id) {
         return EMPLOYEE_LIST.stream().filter(f -> f.getId() == id).findFirst();
     }
 
-    /**
-     *
-     * @param factory
-     * @return
-     */
+
     public List<Employee> getEmployeeByFactory(Factory factory) {
         List<Employee> response = new ArrayList<>();
         FACTORY_EMPLOYEE_LIST.stream().filter(f -> f.getFactory().getId() == factory.getId()).forEach(item -> {
@@ -45,11 +34,6 @@ public class EmployeeRepository implements Data {
         return response;
     }
 
-    /**
-     *
-     * @param employee
-     * @return
-     */
     public List<WorkingDay> getAllWorkingDayByEmployee(Employee employee) {
         List<WorkingDay> response = new ArrayList<>();
         WORKING_DAY_LIST.stream().filter(f -> f.getEmployee().getId() == employee.getId()).forEach(item -> {
@@ -58,11 +42,6 @@ public class EmployeeRepository implements Data {
         return response;
     }
 
-    /**
-     *
-     * @param employee
-     * @return
-     */
     public boolean add(Employee employee) {
         Optional<Employee> optionalEmployee = this.getEmployeeById(employee.getId());
         if (optionalEmployee.isPresent()){
@@ -73,11 +52,6 @@ public class EmployeeRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param employee
-     * @return
-     */
     public boolean update(Employee employee) {
         Optional<Employee> optionalEmployee = this.getEmployeeById(employee.getId());
         if (optionalEmployee.isPresent()){
@@ -88,11 +62,6 @@ public class EmployeeRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param employee
-     * @return
-     */
     public boolean delete(Employee employee) {
         Optional<Employee> optionalEmployee = this.getEmployeeById(employee.getId());
         if (optionalEmployee.isPresent()){

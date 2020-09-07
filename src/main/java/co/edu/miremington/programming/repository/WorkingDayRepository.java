@@ -12,10 +12,6 @@ import java.util.Optional;
  */
 public class WorkingDayRepository implements Data {
 
-    /**
-     *
-     * @return
-     */
     public List<WorkingDay> getAll() {
         return WORKING_DAY_LIST;
     }
@@ -24,11 +20,6 @@ public class WorkingDayRepository implements Data {
         return WORKING_DAY_LIST.stream().filter(f -> f.getId() == id).findFirst();
     }
 
-    /**
-     *
-     * @param workingDay
-     * @return
-     */
     public boolean add(WorkingDay workingDay) {
         Optional<WorkingDay> optionalWorkingDay = this.getWorkingDayById(workingDay.getId());
         if (optionalWorkingDay.isPresent()){
@@ -39,11 +30,6 @@ public class WorkingDayRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param workingDay
-     * @return
-     */
     public boolean update(WorkingDay workingDay) {
         Optional<WorkingDay> optionalWorkingDay = this.getWorkingDayById(workingDay.getId());
         if (optionalWorkingDay.isPresent()){
@@ -54,11 +40,6 @@ public class WorkingDayRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param workingDay
-     * @return
-     */
     public boolean delete(WorkingDay workingDay) {
         Optional<WorkingDay> optionalWorkingDay = this.getWorkingDayById(workingDay.getId());
         if (optionalWorkingDay.isPresent()){

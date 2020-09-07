@@ -12,10 +12,6 @@ import java.util.Optional;
  */
 public class FactoryRepository implements Data {
 
-    /**
-     *
-     * @return
-     */
     public List<Factory> getAll() {
         return FACTORY_LIST;
     }
@@ -24,11 +20,6 @@ public class FactoryRepository implements Data {
         return FACTORY_LIST.stream().filter(f -> f.getId() == id).findFirst();
     }
 
-    /**
-     *
-     * @param factory
-     * @return
-     */
     public boolean add(Factory factory) {
         Optional<Factory> optionalFactory = this.getFactoryById(factory.getId());
         if (optionalFactory.isPresent()){
@@ -39,11 +30,6 @@ public class FactoryRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param factory
-     * @return
-     */
     public boolean update(Factory factory) {
         Optional<Factory> optionalFactory = this.getFactoryById(factory.getId());
         if (optionalFactory.isPresent()){
@@ -54,11 +40,6 @@ public class FactoryRepository implements Data {
         }
     }
 
-    /**
-     *
-     * @param factory
-     * @return
-     */
     public boolean delete(Factory factory) {
         Optional<Factory> optionalFactory = this.getFactoryById(factory.getId());
         if (optionalFactory.isPresent()){

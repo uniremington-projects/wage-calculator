@@ -12,7 +12,6 @@ import co.edu.miremington.programming.service.EmployeeService;
 import co.edu.miremington.programming.service.FactoryEmployeeService;
 import co.edu.miremington.programming.service.FactoryService;
 import co.edu.miremington.programming.service.WorkingDayService;
-import jdk.nashorn.internal.ir.WhileNode;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Field;
@@ -27,7 +26,6 @@ import java.util.Scanner;
  * c) If it is Sunday, the rate will increase by $ 500 pesos on day shift and $ 750 pesos the night shift
  *
  * @author devnix
- * @jls 11.2 Compile-Time Checking of Exceptions
  * @see java.lang.Runtime
  * @since JDK1.8
  */
@@ -51,8 +49,9 @@ public class Process implements Data {
     private boolean simulateError;
 
     /**
-     * @return
-     * @throws Exception
+     * validate state
+     * @return String
+     * @throws Exception generic Exception
      */
     public String state() throws Exception {
         if (simulateError) {
@@ -63,7 +62,8 @@ public class Process implements Data {
     }
 
     /**
-     * @throws Exception
+     * start process
+     * @throws Exception generic Exception
      */
     public void start() throws Exception {
         logger.info(state());
@@ -84,7 +84,8 @@ public class Process implements Data {
     }
 
     /**
-     * Menu
+     * load Menu
+     *
      */
     public void menu() {
         valid = false;
@@ -159,7 +160,8 @@ public class Process implements Data {
     }
 
     /**
-     * @param data
+     * add Employee
+     * @param data type String[]
      */
     public void addEmployee(String[] data) {
         sc = new Scanner(System.in);
@@ -244,7 +246,9 @@ public class Process implements Data {
     }
 
     /**
-     * @param data
+     * add Working Day
+     * @param data type String[]
+     *
      */
     public void addWorkingDay(String[] data) {
         sc = new Scanner(System.in);
@@ -325,9 +329,10 @@ public class Process implements Data {
     }
 
     /**
-     * @param data
-     * @param value
-     * @return
+     * validate fields required
+     * @param data type String[]
+     * @param value String
+     * @return type boolean
      */
     public static boolean required(String[] data, String value) {
         for (String string : data) {
@@ -467,8 +472,8 @@ public class Process implements Data {
 
     /**
      * Simulated data initialization method
+     * @param simulateError type boolean
      *
-     * @param simulateError
      */
     public Process(Boolean simulateError) {
         try {
