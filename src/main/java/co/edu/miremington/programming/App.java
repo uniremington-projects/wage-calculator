@@ -16,7 +16,7 @@ import javax.swing.*;
 public class App {
     static final Logger logger = Logger.getLogger(App.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
 
         logger.info("welcome!");
         try {
